@@ -43,6 +43,39 @@ mem_mode=timing
 v.[system.cpu_cluster.voltage_domain]
 voltage=1.2 V
 ```
+* Για την **_Cache_**:
+
+ **_L1D_** :
+ 
+ ```
+ [system.cpu_cluster.cpus.dcache]
+ i.size=32768
+ ii.assoc=2
+ iii.write_buffers=16
+ ```
+ Διαιρώντας το **32768** με το 1024 προκύπτει ότι η **_L1D_** είναι **_32KB_** .
+
+**_L1D_** :
+
+```
+[system.cpu_cluster.cpus.icache]
+i.size=49152
+ii.assoc=3
+iii.write_buffers=8
+```
+Διαιρώντας το **49152** με το 1024 προκύπτει ότι η **_L1I_** είναι **_48KB_** .
+
+**_L2_** :
+
+```
+[system.cpu_cluster.l2]
+i.size=1048576
+ii.assoc=16
+iii.write_buffers=8
+```
+Διαιρώντας το **1048576** με το (1024) προκύπτει ότι η **_L2_** είναι **_1MB_** 
+
+
 * Για την **_DRAM_** :
 
 ```
